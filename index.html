@@ -4,141 +4,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عيادة التمريض في بغداد</title>
-  <meta name="description" content="خدمات تمريضية ومتابعة منزلية في بغداد. تواصل معنا للاستفسار عن الخدمات والمواعيد.">
+  <title>عيادة التمريض في بغداد | حجز المواعيد</title>
+  <meta name="description" content="خدمات التمريض والاستشارة والمتابعة في بغداد. تواصل معنا لحجز موعد والاستفسار عن الخدمات.">
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Tahoma, Arial, sans-serif;
-      background: #f4f8f7;
-      color: #203b38;
-      line-height: 1.9;
+      background: #f3f8fa;
+      color: #243746;
+      line-height: 1.8;
     }
+
     header {
-      background: #126b60;
+      background: linear-gradient(135deg, #087e8b, #075985);
       color: white;
+      padding: 32px 16px;
       text-align: center;
-      padding: 32px 18px;
     }
-    header h1 { margin: 0; font-size: 28px; }
-    header p { margin: 8px 0 0; }
-    .hero {
-      text-align: center;
-      padding: 35px 18px;
-      background: #e0f1ec;
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
     }
-    .hero h2 { color: #126b60; margin-top: 0; }
+
+    header p {
+      margin: 0;
+    }
+
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      width: 92%;
+      max-width: 850px;
+      margin: 24px auto;
     }
-    .services {
+
+    .intro, .booking, .services {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 14px #12352b0d;
+    }
+
+    h2 {
+      color: #087e8b;
+      margin-top: 0;
+    }
+
+    .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
     }
+
     .service {
-      background: white;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 3px 12px #173c3510;
-    }
-    .service .icon { font-size: 32px; }
-    .service h3 { color: #126b60; margin: 8px 0; }
-    .contact {
-      background: white;
+      background: #edf8fa;
+      padding: 13px;
+      border-radius: 12px;
       text-align: center;
-      padding: 25px;
-      border-radius: 14px;
-      margin-top: 25px;
+      border: 1px solid #d6edf0;
     }
-    .button {
-      display: inline-block;
-      background: #168653;
-      color: white;
-      padding: 10px 24px;
-      border-radius: 9px;
-      text-decoration: none;
+
+    label {
+      display: block;
+      margin: 13px 0 5px;
       font-weight: bold;
-      margin-top: 8px;
     }
-    .notice {
-      background: #fff5dc;
-      padding: 14px;
+
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font: inherit;
+      border: 1px solid #ccd9df;
+      border-radius: 9px;
+      background: white;
+      color: #243746;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #8bd3dc;
+      border-color: #087e8b;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 95px;
+    }
+
+    button, .whatsapp-link {
+      display: block;
+      width: 100%;
+      margin-top: 18px;
+      padding: 13px;
+      border: none;
       border-radius: 10px;
-      font-size: 14px;
+      font: inherit;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
     }
+
+    button {
+      background: #087e8b;
+      color: white;
+    }
+
+    .whatsapp-link {
+      background: #168b51;
+      color: white;
+    }
+
+    .note {
+      color: #536773;
+      font-size: 13px;
+    }
+
     footer {
       text-align: center;
-      background: #126b60;
-      color: white;
-      padding: 16px;
-      margin-top: 30px;
+      padding: 22px 12px;
+      color: #536773;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro, .booking, .services {
+        padding: 17px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>عيادة التمريض في بغداد</h1>
-  <p>رعاية تمريضية واهتمام بصحتكم</p>
-</header>
+  <header>
+    <h1>عيادة التمريض في بغداد</h1>
+    <p>الرعاية التمريضية والاستشارة والمتابعة</p>
+  </header>
 
-<section class="hero">
-  <h2>أهلًا بكم</h2>
-  <p>نسعى إلى تقديم خدمات تمريضية ومتابعة صحية باهتمام واحترام.</p>
-</section>
+  <main class="container">
 
-<main class="container">
-  <h2>خدماتنا</h2>
+    <section class="intro">
+      <h2>أهلًا وسهلًا بكم</h2>
+      <p>
+        يمكنكم الاطلاع على الخدمات المتاحة وإرسال طلب حجز
+        أو الاستفسار مباشرة عبر واتساب.
+      </p>
+      <a class="whatsapp-link"
+         href="https://wa.me/9647754828575"
+         target="_blank"
+         rel="noopener">
+        تواصل عبر واتساب
+      </a>
+    </section>
 
-  <section class="services">
-    <article class="service">
-      <div class="icon">🩺</div>
-      <h3>خدمات الختان</h3>
-      <p>الاستفسار عن خدمة الختان ومواعيدها لدى ممارس مؤهل ومرخّص.</p>
-    </article>
+    <section class="services">
+      <h2>خدماتنا</h2>
+      <div class="service-grid">
+        <div class="service">🩺 استشارة ومتابعة</div>
+        <div class="service">خدمات الختان</div>
+        <div class="service">تغيير الضمادات</div>
+        <div class="service">إعطاء الإبر</div>
+        <div class="service">تعليق المحاليل</div>
+        <div class="service">تركيب الكانيولا</div>
+        <div class="service">الخدمات المنزلية</div>
+        <div class="service">متابعة كبار السن</div>
+      </div>
+      <p class="note">
+        تُقدَّم الإجراءات التمريضية بواسطة أشخاص مؤهلين،
+        ووفق الحاجة الطبية والمتطلبات الصحية المحلية.
+      </p>
+    </section>
 
-    <article class="service">
-      <div class="icon">💉</div>
-      <h3>إعطاء الحقن</h3>
-      <p>خدمات إعطاء الحقن وفق وصفة طبية وعلى يد ممارس مؤهل.</p>
-    </article>
+    <section class="booking" id="booking">
+      <h2>حجز موعد أو طلب خدمة</h2>
+      <p>املأ البيانات التالية، ثم أرسل الطلب عبر واتساب.</p>
 
-    <article class="service">
-      <div class="icon">🩹</div>
-      <h3>تركيب الكانيولا والمحاليل</h3>
-      <p>تركيب الكانيولا وإعطاء المحاليل عند وجود حاجة طبية وبإشراف مناسب.</p>
-    </article>
+      <form id="bookingForm">
 
-    <article class="service">
-      <div class="icon">❤️</div>
-      <h3>متابعة كبار السن</h3>
-      <p>متابعة الاحتياجات اليومية والحالة الصحية لكبار السن والتنسيق مع ذويهم.</p>
-    </article>
-  </section>
+        <label for="name">الاسم الكامل *</label>
+        <input id="name" name="name" type="text"
+               autocomplete="name" required
+               placeholder="اكتب الاسم الكامل">
 
-  <section class="contact">
-    <h2>للاستفسار والحجز</h2>
-    <p>تواصل معنا لمعرفة تفاصيل الخدمات والمواعيد المتاحة في بغداد.</p>
-    <a class="button"
-       href="https://wa.me/9647754828575"
-       target="_blank" rel="noopener">
-       تواصل عبر واتساب
-    </a>
-  </section>
+        <label for="phone">رقم هاتف المراجع *</label>
+        <input id="phone" name="phone" type="tel"
+               autocomplete="tel" required
+               placeholder="اكتب رقم الهاتف">
 
-  <p class="notice">
-    تُقدَّم الخدمات بحسب الاختصاص والتراخيص اللازمة والوصفة الطبية عند الحاجة.
-    في الحالات الطارئة، يرجى الاتصال بخدمات الطوارئ.
-  </p>
-</main>
+        <label for="service">نوع الخدمة *</label>
+        <select id="service" name="service" required>
+          <option value="">اختر نوع الخدمة</option>
+          <option>استشارة ومتابعة</option>
+          <option>خدمات الختان</option>
+          <option>تغيير الضمادات</option>
+          <option>إعطاء الإبر</option>
+          <option>تعليق المحاليل</option>
+          <option>تركيب الكانيولا</option>
+          <option>الخدمات المنزلية</option>
+          <option>متابعة كبار السن</option>
+        </select>
 
-<footer>
-  © عيادة التمريض في بغداد
-</footer>
+        <label for="date">التاريخ المطلوب *</label>
+        <input id="date" name="date" type="date" required>
+
+        <label for="time">الوقت المفضّل</label>
+        <select id="time" name="time">
+          <option value="">غير محدد</option>
+          <option>صباحًا</option>
+          <option>ظهرًا</option>
+          <option>مساءً</option>
+        </select>
+
+        <label for="location">المنطقة في بغداد</label>
+        <input id="location" name="location" type="text"
+               placeholder="اسم المنطقة فقط عند الحاجة">
+
+        <label for="notes">ملاحظات إضافية</label>
+        <textarea id="notes" name="notes"
+                  placeholder="اكتب أي تفاصيل ضرورية، وتجنب إرسال معلومات طبية حساسة هنا."></textarea>
+
+        <button type="submit">إرسال طلب الحجز عبر واتساب</button>
+
+        <p class="note">
+          لن يُرسل الطلب تلقائيًا؛ سيفتح واتساب برسالة جاهزة
+          لتراجعها ثم تضغط إرسال.
+        </p>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    عيادة التمريض في بغداد © 2026
+  </footer>
+
+  <script>
+    const form = document.getElementById("bookingForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value || "غير محدد";
+      const location = document.getElementById("location").value.trim() || "غير محددة";
+      const notes = document.getElementById("notes").value.trim() || "لا توجد";
+
+      const message =
+        "طلب حجز جديد - عيادة التمريض في بغداد\n\n" +
+        "الاسم: " + name + "\n" +
+        "رقم الهاتف: " + phone + "\n" +
+        "نوع الخدمة: " + service + "\n" +
+        "التاريخ المطلوب: " + date + "\n" +
+        "الوقت المفضل: " + time + "\n" +
+        "المنطقة: " + location + "\n" +
+        "ملاحظات: " + notes;
+
+      const url =
+        "https://wa.me/9647754828575?text=" +
+        encodeURIComponent(message);
+
+      window.location.href = url;
+    });
+  </script>
 
 </body>
 </html>
