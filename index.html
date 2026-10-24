@@ -3,38 +3,30 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عيادة التمريض في بغداد | حجز المواعيد</title>
-  <meta name="description" content="خدمات التمريض والاستشارة والمتابعة في بغداد. تواصل معنا لحجز موعد والاستفسار عن الخدمات.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="خدمات التمريض والاستشارة والمتابعة في بغداد. تواصل معنا لطلب الخدمة.">
+  <title>عيادة التمريض في بغداد</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: Tahoma, Arial, sans-serif;
-      background: #f3f8fa;
-      color: #243746;
       line-height: 1.8;
+      background: #f2f7f8;
+      color: #263746;
     }
 
     header {
-      background: linear-gradient(135deg, #087e8b, #075985);
-      color: white;
       padding: 32px 16px;
       text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #087e8b, #075985);
     }
 
-    header h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
-    }
-
-    header p {
-      margin: 0;
-    }
+    header h1 { margin: 0 0 8px; }
+    header p { margin: 0; }
 
     .container {
       width: 92%;
@@ -42,18 +34,15 @@
       margin: 24px auto;
     }
 
-    .intro, .booking, .services {
-      background: white;
+    section {
       padding: 22px;
-      border-radius: 16px;
       margin-bottom: 20px;
+      background: white;
+      border-radius: 16px;
       box-shadow: 0 3px 14px #12352b0d;
     }
 
-    h2 {
-      color: #087e8b;
-      margin-top: 0;
-    }
+    h2 { margin-top: 0; color: #087e8b; }
 
     .service-grid {
       display: grid;
@@ -62,10 +51,10 @@
     }
 
     .service {
-      background: #edf8fa;
       padding: 13px;
-      border-radius: 12px;
       text-align: center;
+      border-radius: 12px;
+      background: #edf8fa;
       border: 1px solid #d6edf0;
     }
 
@@ -76,48 +65,42 @@
     }
 
     input, select, textarea {
-      display: block;
       width: 100%;
       padding: 12px;
       font: inherit;
+      color: #263746;
+      background: white;
       border: 1px solid #ccd9df;
       border-radius: 9px;
-      background: white;
-      color: #243746;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      outline: 2px solid #8bd3dc;
-      border-color: #087e8b;
     }
 
     textarea {
-      resize: vertical;
       min-height: 95px;
+      resize: vertical;
     }
 
     button, .whatsapp-link {
       display: block;
       width: 100%;
-      margin-top: 18px;
       padding: 13px;
-      border: none;
-      border-radius: 10px;
+      margin-top: 18px;
       font: inherit;
       font-weight: bold;
       text-align: center;
       text-decoration: none;
+      border: 0;
+      border-radius: 10px;
       cursor: pointer;
     }
 
     button {
-      background: #087e8b;
       color: white;
+      background: #087e8b;
     }
 
     .whatsapp-link {
-      background: #168b51;
       color: white;
+      background: #168b51;
     }
 
     .note {
@@ -126,38 +109,28 @@
     }
 
     footer {
-      text-align: center;
       padding: 22px 12px;
+      text-align: center;
       color: #536773;
       font-size: 13px;
     }
 
     @media (max-width: 480px) {
-      header h1 {
-        font-size: 23px;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .intro, .booking, .services {
-        padding: 17px;
-      }
+      header h1 { font-size: 23px; }
+      .service-grid { grid-template-columns: 1fr; }
+      section { padding: 17px; }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <h1>عيادة التمريض في بغداد</h1>
     <p>الرعاية التمريضية والاستشارة والمتابعة</p>
   </header>
 
   <main class="container">
-
-    <section class="intro">
+    <section>
       <h2>أهلًا وسهلًا بكم</h2>
       <p>
         يمكنكم الاطلاع على الخدمات المتاحة وإرسال طلب حجز
@@ -165,16 +138,15 @@
       </p>
       <a class="whatsapp-link"
          href="https://wa.me/9647754828575"
-         target="_blank"
-         rel="noopener">
+         target="_blank" rel="noopener">
         تواصل عبر واتساب
       </a>
     </section>
 
-    <section class="services">
+    <section>
       <h2>خدماتنا</h2>
       <div class="service-grid">
-        <div class="service">🩺 استشارة ومتابعة</div>
+        <div class="service">استشارة ومتابعة</div>
         <div class="service">خدمات الختان</div>
         <div class="service">تغيير الضمادات</div>
         <div class="service">إعطاء الإبر</div>
@@ -184,17 +156,16 @@
         <div class="service">متابعة كبار السن</div>
       </div>
       <p class="note">
-        تُقدَّم الإجراءات التمريضية بواسطة أشخاص مؤهلين،
-        ووفق الحاجة الطبية والمتطلبات الصحية المحلية.
+        تُقدَّم الإجراءات التمريضية بواسطة أشخاص مؤهلين
+        ووفق المتطلبات الصحية المحلية.
       </p>
     </section>
 
-    <section class="booking" id="booking">
+    <section id="booking">
       <h2>حجز موعد أو طلب خدمة</h2>
-      <p>املأ البيانات التالية، ثم أرسل الطلب عبر واتساب.</p>
+      <p>املأ البيانات المطلوبة، ثم أرسل الطلب عبر واتساب.</p>
 
       <form id="bookingForm">
-
         <label for="name">الاسم الكامل *</label>
         <input id="name" name="name" type="text"
                autocomplete="name" required
@@ -218,10 +189,10 @@
           <option>متابعة كبار السن</option>
         </select>
 
-        <label for="date">التاريخ المطلوب *</label>
-        <input id="date" name="date" type="date" required>
+        <label for="date">التاريخ المطلوب (اختياري)</label>
+        <input id="date" name="date" type="date">
 
-        <label for="time">الوقت المفضّل</label>
+        <label for="time">الوقت المفضّل (اختياري)</label>
         <select id="time" name="time">
           <option value="">غير محدد</option>
           <option>صباحًا</option>
@@ -229,42 +200,37 @@
           <option>مساءً</option>
         </select>
 
-        <label for="location">المنطقة في بغداد</label>
+        <label for="location">المنطقة في بغداد (اختياري)</label>
         <input id="location" name="location" type="text"
-               placeholder="اسم المنطقة فقط عند الحاجة">
+               placeholder="اسم المنطقة عند الحاجة">
 
-        <label for="notes">ملاحظات إضافية</label>
+        <label for="notes">ملاحظات إضافية (اختياري)</label>
         <textarea id="notes" name="notes"
-                  placeholder="اكتب أي تفاصيل ضرورية، وتجنب إرسال معلومات طبية حساسة هنا."></textarea>
+                  placeholder="اكتب أي تفاصيل ضرورية، وتجنب مشاركة معلومات طبية حساسة هنا."></textarea>
 
         <button type="submit">إرسال طلب الحجز عبر واتساب</button>
-
         <p class="note">
-          لن يُرسل الطلب تلقائيًا؛ سيفتح واتساب برسالة جاهزة
-          لتراجعها ثم تضغط إرسال.
+          سيفتح واتساب برسالة جاهزة لمراجعتها وإرسالها بنفسك.
+          إرسال الطلب لا يعني تأكيد الموعد.
         </p>
-
       </form>
     </section>
-
   </main>
 
-  <footer>
-    عيادة التمريض في بغداد © 2026
-  </footer>
+  <footer>عيادة التمريض في بغداد © 2026</footer>
 
   <script>
-    const form = document.getElementById("bookingForm");
-
-    form.addEventListener("submit", function(event) {
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const service = document.getElementById("service").value;
-      const date = document.getElementById("date").value;
+      const date = document.getElementById("date").value ||
+        "غير محدد - يرجى التنسيق عبر واتساب";
       const time = document.getElementById("time").value || "غير محدد";
-      const location = document.getElementById("location").value.trim() || "غير محددة";
+      const location = document.getElementById("location").value.trim() ||
+        "غير محددة - يرجى التنسيق عبر واتساب";
       const notes = document.getElementById("notes").value.trim() || "لا توجد";
 
       const message =
@@ -277,13 +243,12 @@
         "المنطقة: " + location + "\n" +
         "ملاحظات: " + notes;
 
-      const url =
-        "https://wa.me/9647754828575?text=" +
+      const url = "https://wa.me/9647754828575?text=" +
         encodeURIComponent(message);
 
       window.location.href = url;
     });
   </script>
-
 </body>
 </html>
+
