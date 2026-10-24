@@ -5,350 +5,590 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#087f8c">
-  <meta name="description" content="خدمات تمريضية في بغداد الجديدة. تواصل مع الممرضة نسرين لحجز الخدمة والاستفسار.">
-  <title>الممرضة نسرين | بغداد الجديدة</title>
+  <meta name="description" content="خدمات الممرضة نسرين التمريضية في بغداد الجديدة، بغداد. للاستفسار وطلب الخدمة عبر واتساب.">
+  <title>الممرضة نسرين | خدمات تمريضية في بغداد الجديدة</title>
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --primary: #087f8c;
+      --dark: #123b46;
+      --light: #f1f9f8;
+      --accent: #d8f1ec;
+      --text: #243a40;
+      --muted: #657b80;
+      --white: #ffffff;
     }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Tahoma, Arial, sans-serif;
-      background: #f0f8f8;
-      color: #243b40;
-      line-height: 1.8;
+      background: #f7fbfb;
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a { text-decoration: none; }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
     }
 
     header {
-      background: linear-gradient(135deg, #087f8c, #12a6a1);
-      color: white;
-      text-align: center;
-      padding: 38px 16px;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid #e2efed;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 30px;
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
-    .location {
+    .brand {
+      color: var(--dark);
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .brand span { color: var(--primary); }
+
+    .nav a:last-child {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 65px 0;
+      background: linear-gradient(135deg, #e4f6f2, #f6fbff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .tag {
       display: inline-block;
-      margin-top: 7px;
-      padding: 3px 15px;
-      background: rgba(255,255,255,0.18);
-      border-radius: 20px;
-      font-size: 16px;
+      padding: 5px 14px;
+      background: var(--accent);
+      color: var(--primary);
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
     }
 
-    header p {
-      margin: 10px 0 0;
+    h1 {
+      color: var(--dark);
+      font-size: clamp(30px, 5vw, 47px);
+      line-height: 1.45;
+      margin: 15px 0;
     }
 
-    .container {
-      width: 92%;
-      max-width: 720px;
-      margin: 24px auto;
+    h1 span { color: var(--primary); }
+
+    .hero p {
+      font-size: 17px;
+      color: #526a70;
     }
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 22px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 18px rgba(0,70,80,0.07);
+    .hero-image {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 26px;
+      box-shadow: 0 15px 40px #17434b1a;
     }
 
-    h2 {
-      color: #087f8c;
-      margin-top: 0;
-      font-size: 22px;
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 19px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: .2s;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font: inherit;
+      font-weight: bold;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .primary { background: var(--primary); color: white; }
+    .whatsapp { background: #168b58; color: white; }
+    .outline { border-color: #cbdedc; color: var(--dark); background: white; }
+
+    .notice {
+      margin-top: 22px;
+      padding: 13px 16px;
+      background: #fff8e8;
+      color: #77581a;
+      border-radius: 12px;
+      font-size: 14px;
+      border: 1px solid #f3e4bb;
+    }
+
+    section { padding: 65px 0; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-head h2 {
+      color: var(--dark);
+      font-size: 30px;
+      margin: 0 0 8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
     }
 
     .services {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 13px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
     }
 
-    .service {
-      border: 1px solid #d8eaea;
-      border-radius: 12px;
-      padding: 15px;
-      background: #fbffff;
-    }
-
-    .service label {
+    .card {
+      background: white;
+      border: 1px solid #e7efee;
+      border-radius: 19px;
+      overflow: hidden;
+      box-shadow: 0 7px 25px #143e4610;
       display: flex;
-      gap: 10px;
-      align-items: center;
-      font-weight: bold;
-      cursor: pointer;
+      flex-direction: column;
     }
 
-    .service input {
-      width: 19px;
-      height: 19px;
-      accent-color: #087f8c;
-      flex-shrink: 0;
-    }
-
-    .service p {
-      margin: 5px 0 0 29px;
-      color: #64777a;
-      font-size: 14px;
-    }
-
-    .field {
-      margin-bottom: 16px;
-    }
-
-    .field label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-
-    input[type="date"],
-    textarea {
+    .card img {
       width: 100%;
-      border: 1px solid #ccdede;
-      border-radius: 10px;
-      padding: 12px;
-      font-family: inherit;
-      font-size: 15px;
+      height: 195px;
+      object-fit: cover;
+      background: #e7f3f1;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: flex-start;
+    }
+
+    .card h3 {
+      color: var(--dark);
+      font-size: 19px;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 18px;
+      flex: 1;
+    }
+
+    .card .btn { width: 100%; font-size: 14px; }
+
+    .location {
+      background: var(--light);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .location-box {
+      padding: 28px;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid #e1eeeb;
+    }
+
+    .location-box h3 { color: var(--dark); margin-top: 0; }
+
+    .location-line {
+      padding: 10px 0;
+      border-bottom: 1px solid #edf2f1;
+    }
+
+    .map-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+      text-align: center;
+      padding: 25px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #d9f1ec, #eaf4fa);
+      color: var(--dark);
+      border: 1px solid #d5e9e6;
+    }
+
+    .map-link strong {
+      display: block;
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .booking {
       background: white;
     }
 
-    textarea {
-      min-height: 90px;
-      resize: vertical;
+    .form-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 28px;
+      border: 1px solid #e3eeec;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px #123b460b;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 13px 0 5px;
+      color: var(--dark);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cededc;
+      border-radius: 10px;
+      font: inherit;
+      background: #fcfefe;
+      color: var(--text);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #a4d9d2;
+      border-color: var(--primary);
     }
 
     .hint {
-      color: #64777a;
+      color: var(--muted);
       font-size: 13px;
-      margin-top: 4px;
     }
 
-    .btn {
-      display: block;
+    .form-box .btn {
       width: 100%;
-      border: none;
-      border-radius: 11px;
-      padding: 13px 16px;
-      text-align: center;
-      text-decoration: none;
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 12px;
-    }
-
-    .btn-whatsapp {
-      color: white;
-      background: #20a464;
-    }
-
-    .btn-map {
-      color: white;
-      background: #087f8c;
-    }
-
-    .btn-secondary {
-      color: #087f8c;
-      background: #e8f5f5;
-      border: 1px solid #cce5e5;
-    }
-
-    .notice {
-      font-size: 13px;
-      color: #65777a;
-      text-align: center;
-      margin-top: 14px;
+      margin-top: 20px;
     }
 
     footer {
+      background: #103943;
+      color: #e9f4f3;
+      padding: 30px 0;
       text-align: center;
-      padding: 20px;
-      color: #65777a;
-      font-size: 13px;
+    }
+
+    footer p { margin: 5px 0; }
+    footer a { color: #a9e5d7; }
+
+    @media (max-width: 800px) {
+      .hero-grid, .location-grid { grid-template-columns: 1fr; }
+      .hero { padding: 38px 0; }
+      .hero-image { height: 260px; }
+      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+      .card img { height: 150px; }
+      .card-body { padding: 14px; }
+      .card h3 { font-size: 16px; }
+      .card p { font-size: 13px; }
+    }
+
+    @media (max-width: 430px) {
+      .services { grid-template-columns: 1fr; }
+      .card img { height: 210px; }
+      .nav { min-height: 65px; }
+      .brand { font-size: 18px; }
+      .nav a:last-child { font-size: 14px; }
+      .form-box { padding: 19px; }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>الممرضة نسرين</h1>
-    <div class="location">📍 بغداد الجديدة</div>
-    <p>خدمات تمريضية واهتمام براحتكم وسلامتكم</p>
-  </header>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">الممرضة <span>نسرين</span></a>
+    <a href="#booking">طلب خدمة ←</a>
+  </div>
+</header>
 
-  <main class="container">
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag">رعاية تمريضية في بغداد</span>
+        <h1>رعايتكم الصحية<br>تبدأ مع <span>الممرضة نسرين</span></h1>
+        <p>
+          خدمات تمريضية ومتابعة لكبار السن، مع إمكانية الاستفسار
+          عن الخدمة المناسبة والتواصل مباشرة عبر واتساب.
+        </p>
 
-    <section class="card">
-      <h2>📍 موقع العيادة</h2>
-      <p>
-        العيادة في بغداد الجديدة، بغداد.
-        يمكنك الاطلاع على الموقع قبل طلب الخدمة.
-      </p>
+        <p><strong>📍 الموقع: بغداد الجديدة – بغداد</strong></p>
 
-      <a
-        class="btn btn-map"
-        href="https://maps.app.goo.gl/13qRQrDuNNaJ8WQ66"
-        target="_blank"
-        rel="noopener noreferrer">
-        📍 عرض الموقع على خرائط Google
-      </a>
-    </section>
+        <div class="buttons">
+          <a class="btn whatsapp"
+             href="https://wa.me/9647754828575"
+             target="_blank" rel="noopener">
+            ☎ تواصل عبر واتساب
+          </a>
+          <a class="btn outline"
+             href="https://maps.app.goo.gl/nMLt4wS7K9y4gPE88"
+             target="_blank" rel="noopener">
+            📍 موقع العيادة
+          </a>
+        </div>
 
-    <section class="card">
-      <h2>🩺 الخدمات المتاحة</h2>
-      <p>اختر الخدمة التي ترغب بالاستفسار عنها:</p>
+        <div class="notice">
+          تنويه: العيادة جديدة في بغداد الجديدة. يرجى الاطلاع على
+          الموقع على الخريطة والتأكد من تفاصيل الخدمة قبل الحجز.
+        </div>
+      </div>
+
+      <div>
+        <img class="hero-image"
+          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=85"
+          alt="صورة توضيحية لمقدمة رعاية صحية"
+          onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>خدماتنا التمريضية</h2>
+        <p>اختر الخدمة لمعرفة التفاصيل أو إرسال طلب عبر واتساب.</p>
+      </div>
 
       <div class="services">
 
-        <div class="service">
-          <label>
-            <input type="checkbox" name="service"
-              value="خدمات الختان">
-            خدمات الختان
-          </label>
-          <p>التواصل للاستفسار عن الخدمة وتفاصيلها.</p>
-        </div>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80"
+               alt="رعاية صحية"
+               loading="lazy">
+          <div class="card-body">
+            <h3>الختان</h3>
+            <p>الاستفسار عن خدمة الختان وإمكانية تقديمها وفق التقييم الطبي وعلى يد ممارس مؤهل.</p>
+            <button class="btn primary" onclick="chooseService('الختان')">طلب الخدمة</button>
+          </div>
+        </article>
 
-        <div class="service">
-          <label>
-            <input type="checkbox" name="service"
-              value="إعطاء الحقن">
-            إعطاء الحقن
-          </label>
-          <p>تُقدَّم وفق وصفة طبية وعند ملاءمتها للحالة.</p>
-        </div>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=80"
+               alt="رعاية تمريضية"
+               loading="lazy">
+          <div class="card-body">
+            <h3>إعطاء الحقن</h3>
+            <p>خدمة الحقن وفق وصفة طبية وتعليمات المختص وباستخدام الأدوات المناسبة.</p>
+            <button class="btn primary" onclick="chooseService('إعطاء الحقن')">طلب الخدمة</button>
+          </div>
+        </article>
 
-        <div class="service">
-          <label>
-            <input type="checkbox" name="service"
-              value="تركيب الكانيولا والمحاليل">
-            تركيب الكانيولا والمحاليل
-          </label>
-          <p>بعد تقييم الحالة والتأكد من وجود داعٍ طبي.</p>
-        </div>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=700&q=80"
+               alt="معدات طبية"
+               loading="lazy">
+          <div class="card-body">
+            <h3>تركيب الكانيولا الوريدية</h3>
+            <p>تركيب الكانيولا بواسطة ممارس مؤهل، وفق الحاجة الطبية وإجراءات مكافحة العدوى.</p>
+            <button class="btn primary" onclick="chooseService('تركيب الكانيولا الوريدية')">طلب الخدمة</button>
+          </div>
+        </article>
 
-        <div class="service">
-          <label>
-            <input type="checkbox" name="service"
-              value="متابعة كبار السن">
-            متابعة كبار السن
-          </label>
-          <p>الاستفسار عن احتياجات الرعاية والمتابعة.</p>
-        </div>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=700&q=80"
+               alt="رعاية طبية"
+               loading="lazy">
+          <div class="card-body">
+            <h3>المحاليل الوريدية</h3>
+            <p>تقديم الخدمة عند وجود استطباب ووصفة طبية مناسبة، مع متابعة المريض حسب الحاجة.</p>
+            <button class="btn primary" onclick="chooseService('المحاليل الوريدية')">طلب الخدمة</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1576765608866-5b51046452b6?auto=format&fit=crop&w=700&q=80"
+               alt="رعاية كبار السن"
+               loading="lazy">
+          <div class="card-body">
+            <h3>متابعة كبار السن</h3>
+            <p>متابعة تمريضية ومساندة في الرعاية اليومية بحسب احتياجات الشخص وحالته.</p>
+            <button class="btn primary" onclick="chooseService('متابعة كبار السن')">طلب الخدمة</button>
+          </div>
+        </article>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="card">
-      <h2>📝 طلب الخدمة</h2>
+  <section class="location" id="location">
+    <div class="container">
+      <div class="section-head">
+        <h2>موقع العيادة والخرائط</h2>
+        <p>تحقق من الموقع قبل إرسال طلبك.</p>
+      </div>
 
-      <form id="bookingForm">
+      <div class="location-grid">
+        <div class="location-box">
+          <h3>📍 معلومات العيادة</h3>
+          <div class="location-line">الاسم: الممرضة نسرين</div>
+          <div class="location-line">المنطقة: بغداد الجديدة</div>
+          <div class="location-line">المدينة: بغداد، العراق</div>
+          <div class="location-line">واتساب: 07754828575</div>
 
-        <div class="field">
-          <label for="bookingDate">📅 التاريخ (اختياري)</label>
-          <input type="date" id="bookingDate">
-          <div class="hint">
-            يمكنك ترك التاريخ فارغًا وتحديده عبر واتساب.
+          <a class="btn primary"
+             style="width:100%; margin-top:20px"
+             href="https://maps.app.goo.gl/nMLt4wS7K9y4gPE88"
+             target="_blank" rel="noopener">
+            🗺️ افتح خرائط Google
+          </a>
+        </div>
+
+        <a class="map-link"
+           href="https://maps.app.goo.gl/nMLt4wS7K9y4gPE88"
+           target="_blank" rel="noopener">
+          <div>
+            <div style="font-size:42px">📍</div>
+            <strong>موقعنا على الخريطة</strong>
+            <div>اضغط هنا لفتح الموقع والاتجاهات عبر Google Maps</div>
           </div>
-        </div>
-
-        <div class="field">
-          <label for="details">💬 تفاصيل إضافية (اختياري)</label>
-          <textarea id="details"
-            placeholder="اكتب استفسارك أو أي تفاصيل تساعدنا على فهم طلبك"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-whatsapp">
-          🟢 إرسال الطلب عبر واتساب
-        </button>
-
-        <a
-          class="btn btn-secondary"
-          href="https://maps.app.goo.gl/13qRQrDuNNaJ8WQ66"
-          target="_blank"
-          rel="noopener noreferrer">
-          🗺️ فتح الخريطة قبل الطلب
         </a>
+      </div>
+    </div>
+  </section>
 
-      </form>
+  <section class="booking" id="booking">
+    <div class="container">
+      <div class="section-head">
+        <h2>طلب خدمة عبر واتساب</h2>
+        <p>املأ المعلومات المتاحة، ثم اضغط لإرسال الطلب.</p>
+      </div>
 
-      <p class="notice">
-        الموقع في بغداد الجديدة فقط. إرسال الطلب لا يعني تأكيد الحجز؛
-        يتم الاتفاق على التفاصيل عبر واتساب.
-      </p>
-    </section>
+      <div class="form-box">
+        <form id="bookingForm">
+          <label for="customer">الاسم (اختياري)</label>
+          <input id="customer" type="text" placeholder="اكتب اسمك">
 
-  </main>
+          <label for="service">الخدمة المطلوبة *</label>
+          <select id="service" required>
+            <option value="">اختر الخدمة</option>
+            <option>الختان</option>
+            <option>إعطاء الحقن</option>
+            <option>تركيب الكانيولا الوريدية</option>
+            <option>المحاليل الوريدية</option>
+            <option>متابعة كبار السن</option>
+            <option>استفسار عن خدمة أخرى</option>
+          </select>
 
-  <footer>
-    © الممرضة نسرين — بغداد الجديدة، بغداد
-  </footer>
+          <label for="date">التاريخ (اختياري)</label>
+          <input id="date" type="date">
 
-  <script>
-    const whatsappNumber = "9647754828575";
+          <label for="area">المنطقة أو العنوان (اختياري)</label>
+          <input id="area" type="text" placeholder="مثال: بغداد الجديدة">
 
-    const mapsLink =
-      "https://maps.app.goo.gl/13qRQrDuNNaJ8WQ66";
+          <label for="details">تفاصيل إضافية (اختياري)</label>
+          <textarea id="details" rows="3" placeholder="اكتب أي تفاصيل تساعد في فهم طلبك"></textarea>
 
-    document.getElementById("bookingForm")
-      .addEventListener("submit", function(event) {
+          <p class="hint">
+            إرسال الطلب لا يعني تأكيد الموعد أو توفر الخدمة.
+            سيتم التواصل لتأكيد التفاصيل.
+          </p>
 
-        event.preventDefault();
+          <button type="submit" class="btn whatsapp">
+            إرسال الطلب عبر واتساب
+          </button>
 
-        const selectedServices = Array.from(
-          document.querySelectorAll(
-            'input[name="service"]:checked'
-          )
-        ).map(function(item) {
-          return item.value;
-        });
+          <a class="btn outline"
+             style="width:100%; margin-top:10px"
+             href="https://maps.app.goo.gl/nMLt4wS7K9y4gPE88"
+             target="_blank" rel="noopener">
+            عرض الموقع على الخرائط
+          </a>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
 
-        if (selectedServices.length === 0) {
-          alert("يرجى اختيار خدمة واحدة على الأقل.");
-          return;
-        }
+<footer>
+  <div class="container">
+    <p><strong>الممرضة نسرين</strong></p>
+    <p>خدمات تمريضية في بغداد الجديدة – بغداد</p>
+    <p>واتساب:
+      <a href="https://wa.me/9647754828575" target="_blank" rel="noopener">
+        07754828575
+      </a>
+    </p>
+    <p style="font-size:12px; color:#c3d9d9">
+      تُقدّم الخدمات ضمن حدود التأهيل المهني والضوابط الطبية المعمول بها.
+    </p>
+  </div>
+</footer>
 
-        const date =
-          document.getElementById("bookingDate").value;
+<script>
+  const whatsappNumber = "9647754828575";
 
-        const details =
-          document.getElementById("details").value.trim();
+  function chooseService(serviceName) {
+    document.getElementById("service").value = serviceName;
+    document.getElementById("booking").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
 
-        let message =
-          "السلام عليكم، أرغب بالاستفسار عن خدمات الممرضة نسرين.\n\n";
+  document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        message += "📍 المنطقة: بغداد الجديدة، بغداد\n";
-        message += "🩺 الخدمة المطلوبة: " +
-          selectedServices.join("، ") + "\n";
+    const customer = document.getElementById("customer").value.trim();
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("date").value;
+    const area = document.getElementById("area").value.trim();
+    const details = document.getElementById("details").value.trim();
 
-        if (date) {
-          message += "📅 التاريخ المطلوب: " + date + "\n";
-        }
+    let message = "مرحباً الممرضة نسرين، أريد الاستفسار عن طلب خدمة تمريضية.\n\n";
+    message += "الخدمة المطلوبة: " + service + "\n";
+    message += "الاسم: " + (customer || "لم يذكر") + "\n";
+    message += "التاريخ: " + (date || "غير محدد") + "\n";
+    message += "المنطقة: " + (area || "غير محددة") + "\n";
+    message += "تفاصيل إضافية: " + (details || "لا توجد") + "\n";
+    message += "موقع العيادة على الخرائط: https://maps.app.goo.gl/nMLt4wS7K9y4gPE88";
 
-        if (details) {
-          message += "💬 تفاصيل إضافية: " + details + "\n";
-        }
-
-        message += "🗺️ موقع العيادة: " + mapsLink;
-
-        const whatsappURL =
-          "https://wa.me/" + whatsappNumber +
-          "?text=" + encodeURIComponent(message);
-
-        window.location.href = whatsappURL;
-      });
-  </script>
+    window.open(
+      "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message),
+      "_blank"
+    );
+  });
+</script>
 
 </body>
 </html>
